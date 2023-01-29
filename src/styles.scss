@@ -1,1 +1,70 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Montserrat-Bold";
+  src: url("./assets/fonts/Montserrat-Bold.ttf");
+}
+@font-face {
+  font-family: "Montserrat-SemiBold";
+  src: url("./assets/fonts/Montserrat-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: "Montserrat-ExtraBold";
+  src: url("./assets/fonts/Montserrat-ExtraBold.ttf");
+}
+
+@font-face {
+  font-family: "Montserrat-ExtraLight";
+  src: url("./assets/fonts/Montserrat-ExtraLight.ttf");
+}
+@font-face {
+  font-family: "Montserrat-Light";
+  src: url("./assets/fonts/Montserrat-Light.ttf");
+}
+
+@font-face {
+  font-family: "Montserrat-Medium";
+  src: url("./assets/fonts/Montserrat-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Montserrat-Regular";
+  src: url("./assets/fonts/Montserrat-Regular.ttf");
+}
+
+*{
+    font-family: 'Montserrat-Medium';
+}
+body{
+  background-image: url(/assets/images/bg-image.jpeg);
+}
+
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+  left: 0;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgb(212, 212, 212);
+  border-radius: 10px;
+ 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background:#0078d4; 
+  border-radius: 10px;
+
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #106ebe; 
+}

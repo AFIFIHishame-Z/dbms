@@ -1,0 +1,17 @@
+<div>
+  <ng-container class="mt-3 lg:mt-0">
+    <div class="flex items-center justify-center w-full h-[80px] bg-gray-600">
+      <span class="font-monsterratBold text-white">LOGO</span>
+    </div>
+    <ul class="list-none mt-5">
+      <li
+        *ngFor="let item of items"
+        dbms-app-menu-item
+        (navigateEvent)="navigate($event)"
+        [item]="item"
+        [index]="0"
+        [root]="true"
+      ></li>
+    </ul>
+  </ng-container>
+</div>

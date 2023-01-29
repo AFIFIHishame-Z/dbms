@@ -1,0 +1,40 @@
+<div class="flex flex-col items-center gap-y-10 w-full py-20">
+  <div class="flex flex-col items-center">
+    <div>
+      <span class="font-monsterratBold text-2xl">Welcome!</span>
+    </div>
+    <div>
+      <span class="font-monsterratBold text-md text-gray-500">
+        There are no users added yet.
+      </span>
+    </div>
+  </div>
+  <div class="mt-5">
+    <img
+      class="w-[200px]"
+      src="/assets/images/svg/notify.svg"
+      alt=""
+      srcset=""
+    />
+  </div>
+  <div class="mt-10">
+    <p-button
+      [label]="'Add user'"
+      [style]="{
+        width: '150px'
+      }"
+      (click)="displayDialogAddUser()"
+    ></p-button>
+  </div>
+</div>
+
+<div *ngIf="displayAddUser">
+  <p-dialog
+    header="Add user"
+    [modal]="true"
+    [(visible)]="visibleAddUser"
+    [style]="{ width: '50vw' }"
+  >
+    <p>Add user dialog</p>
+  </p-dialog>
+</div>

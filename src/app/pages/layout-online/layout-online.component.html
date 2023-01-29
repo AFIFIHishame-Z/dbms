@@ -1,0 +1,35 @@
+<div class="h-full w-full">
+  <div>
+    <p-sidebar
+      [(visible)]="toggleSideBar"
+      [baseZIndex]="10000"
+     
+      [showCloseIcon]="false"
+      [style]="{ width: '260px' }"
+    >
+      <dbms-aside  (closeMenuClickedEvent)="toggleSideBar = false"></dbms-aside>
+    </p-sidebar>
+    <p-sidebar [style]="{ width: '260px' }" [(visible)]="toggleRightSideBar" [showCloseIcon]="false" position="right" [baseZIndex]="10000">
+      <h3>Right Sidebar</h3>
+    </p-sidebar>
+    <header
+      class="h-[60px] flex sticky top-0 items-center px-5 w-full shadow-md bg-white"
+    >
+      <dbms-header
+      class="w-full"
+        (toggleMenuClickedEvent)="toggleSideBar = true"
+       
+        (toggleRightMenuClickedEvent)="toggleRightSideBar = true"
+      ></dbms-header>
+    </header>
+    <main
+      class="flex flex-grow flex-col w-[95%] md:w-[85%] scroll-m-64 mx-auto bg-white min-h-screen-60px"
+    >
+      <div class="sticky top-[55px] w-full">
+        <dbms-toolbar></dbms-toolbar>
+      </div>
+      <router-outlet></router-outlet>
+      
+    </main>
+  </div>
+</div>

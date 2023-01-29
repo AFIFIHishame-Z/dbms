@@ -1,0 +1,84 @@
+<div class="flex w-full justify-between items-center">
+  <div class="flex items-center gap-x-2">
+    <button
+      (click)="toggleAside()"
+      class="flex justify-center items-center bg-gray-300 opacity-75 text-gray-700 active:text-primary-dark hover:text-primary rounded-md w-[30px] h-[30px]"
+    >
+      <span class="svg-icon svg-icon-4">
+        <span [inlineSVG]="'/assets/images/icons/menu-ico.svg'"></span>
+      </span>
+      <!--end::Svg Icon-->
+    </button>
+    <div class="bg-gray-600 flex w-[160px] h-full items-center justify-center">
+      <span class="text-white">LOGO</span>
+    </div>
+  </div>
+  <div class="flex items-center gap-x-3">
+    <span
+      (click)="search.toggle($event)"
+      class="w-[40px] h-[40px] hidden md:flex items-center justify-center rounded-md hover:bg-gray-100 hover:text-primary-dark text-gray-400 cursor-pointer"
+    >
+      <span [inlineSVG]="'/assets/images/icons/search-ico.svg'"></span>
+    </span>
+
+    <span
+      (click)="msg.toggle($event)"
+      class="w-[40px] h-[40px] hidden md:flex items-center justify-center rounded-md hover:bg-gray-100 hover:text-primary-dark text-gray-400 cursor-pointer"
+    >
+      <span [inlineSVG]="'/assets/images/icons/msg-ico.svg'"></span>
+    </span>
+
+    <span
+      (click)="projects.toggle($event)"
+      class="w-[40px] h-[40px] hidden md:flex items-center justify-center rounded-md hover:bg-gray-100 hover:text-primary-dark text-gray-400 cursor-pointer"
+      [ngClass]="{
+        'bg-gray-100': showProjects,
+        'text-primary-dark': showProjects,
+        'bg-transparent': !showProjects,
+        'text-gray-400': !showProjects
+      }"
+      >
+      <span [inlineSVG]="'/assets/images/icons/projects-ico.svg'"></span>
+    </span>
+    <span
+      (click)="notifs.toggle($event)"
+      class="w-[40px] h-[40px] hidden md:flex items-center justify-center rounded-md hover:bg-gray-100 hover:text-primary-dark text-gray-400 cursor-pointer"
+      [ngClass]="{
+        'bg-gray-100': showNotifs,
+        'text-primary-dark': showNotifs,
+        'bg-transparent': !showNotifs,
+        'text-gray-400': !showNotifs
+      }"
+    >
+      <span [inlineSVG]="'/assets/images/icons/bell-ico.svg'"></span>
+    </span>
+    <div
+      (click)="toggleAsideRight()"
+      class="w-[40px] h-[40px] bg-gray-600 rounded-full cursor-pointer"
+    ></div>
+  </div>
+</div>
+
+<p-overlayPanel
+  (onHide)="onNotifsHide()"
+  (onShow)="onNotifsShow()"
+  #notifs
+  [style]="{ width: '300px' }"
+>
+  <ng-template pTemplate> Notifs </ng-template>
+</p-overlayPanel>
+
+<p-overlayPanel
+(onHide)="onProjectsHide()"
+(onShow)="onProjectsShow()"
+#projects [style]="{ width: '300px' }">
+  <ng-template pTemplate> Projects </ng-template>
+</p-overlayPanel>
+
+<p-overlayPanel #msg [style]="{ width: '300px' }">
+  <ng-template pTemplate> Messages </ng-template>
+</p-overlayPanel>
+
+<p-overlayPanel #search [style]="{ width: '300px' }">
+  <ng-template pTemplate> Search </ng-template>
+</p-overlayPanel>
